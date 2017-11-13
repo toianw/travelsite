@@ -10,12 +10,24 @@
     margin-right: -100px;
   }
 
+  &--gutters-small {
+    margin-right: -45px;
+  }
+
+  &--t-padding {
+    padding-top: 80px;
+  }
+
   &--gutters > div {
     padding-right: 65px;
   }
 
   &--gutters-large > div {
     padding-right: 100px;
+  }
+
+  &--gutters-small > div {
+    padding-right: 45px;
   }
 
   &__b-margin-until-medium {
@@ -51,5 +63,54 @@
     }
   }
 
+  @mixin atLarge {
+    &__col-large-4 {
+      float: left;
+      width: 33.33%;
+    }
+
+    &__b-margin-until-large {
+      margin-bottom: 0;
+    }
+
+    &__col-large-4--larger {
+      width: 37%;
+    }
+
+    &__col-large-6 {
+      float: left;
+      width: 50%;
+    }
+
+    &__col-large-8 {
+      float: left;
+      width: 66.66%;
+    }
+
+    &__col-large-8--smaller {
+      width: 63%;
+    }
+  }
+
+  /*begin equal height rule*/
+  &--equal-height-at-medium {
+    @mixin atMedium {
+      display: flex;
+    }
+
+    & > div {
+      display: flex;
+    }
+  }
+
+  &--equal-height-at-large {
+    @mixin atLarge {
+      display: flex;
+    }
+
+    & > div {
+      display: flex;
+    }
+  }
 
 }
